@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ucapan Ulang Tahun 🎉</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #ffe6e6, #fff7d1);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .card h1 {
+      color: #ff4081;
+      font-size: 1.8rem;
+    }
+    .message {
+      font-size: 1rem;
+      margin: 15px 0;
+      color: #444;
+    }
+    .from {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #ff4081;
+    }
+    button {
+      background: #ff80ab;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ff4081;
+    }
+    .confetti {
+      position: absolute;
+      top: -20px;
+      animation: fall 4s linear infinite;
+      opacity: 0.8;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(500px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🎂 Selamat Ulang Tahun mas affan!</h1>
+    <p class="message" id="message">Selamat ulang tahun! make a wish for
+ ur b'day, i hope ur always happy and fine. Semoga hal baik selalu 
+beriringan denganmu, semoga jalanmu untuk mencapai masa depan yang cerah
+ dipermudahkan, aku akan selalu bangga dengan setiap prosesmu, 
+keberhasilan bahkan kegagalanmu. Hopefully at the age of 20 you will be 
+better person and always happy</p>
+    <p class="from" id="from">- Dari: natha -</p>
+
+    <button onclick="ubahUcapan()">Ubah Ucapan</button>
+
+    <div id="confetti-container"><span class="confetti" style="left: 94.8644%; animation-duration: 4.21999s;">✨</span><span class="confetti" style="left: 17.8588%; animation-duration: 3.39397s;">🎈</span><span class="confetti" style="left: 12.3%; animation-duration: 3.80708s;">🎈</span><span class="confetti" style="left: 49.4837%; animation-duration: 4.36213s;">✨</span><span class="confetti" style="left: 10.5582%; animation-duration: 3.42581s;">✨</span><span class="confetti" style="left: 61.8057%; animation-duration: 3.35029s;">✨</span><span class="confetti" style="left: 81.546%; animation-duration: 4.92583s;">🎉</span><span class="confetti" style="left: 96.8348%; animation-duration: 3.41313s;">🎈</span><span class="confetti" style="left: 8.15328%; animation-duration: 3.8126s;">🎂</span><span class="confetti" style="left: 72.7807%; animation-duration: 3.93955s;">🎉</span><span class="confetti" style="left: 23.6916%; animation-duration: 3.92281s;">🎂</span><span class="confetti" style="left: 36.0178%; animation-duration: 3.43077s;">🎈</span><span class="confetti" style="left: 67.4748%; animation-duration: 4.24989s;">✨</span><span class="confetti" style="left: 32.3609%; animation-duration: 4.54822s;">🎉</span><span class="confetti" style="left: 17.1327%; animation-duration: 4.65001s;">🎉</span><span class="confetti" style="left: 26.2545%; animation-duration: 4.64795s;">🎂</span><span class="confetti" style="left: 91.2789%; animation-duration: 3.63365s;">🎂</span><span class="confetti" style="left: 49.0373%; animation-duration: 3.11365s;">🎂</span><span class="confetti" style="left: 63.3765%; animation-duration: 3.51882s;">✨</span><span class="confetti" style="left: 65.964%; animation-duration: 3.93318s;">✨</span></div>
+  </div>
+
+  <script>
+    // Buat efek confetti sederhana 🎉
+    const container = document.getElementById("confetti-container");
+    const emoji = ['🎉','🎈','✨','🎂'];
+    for (let i = 0; i < 20; i++) {
+      const span = document.createElement("span");
+      span.classList.add("confetti");
+      span.textContent = emoji[Math.floor(Math.random()*emoji.length)];
+      span.style.left = Math.random() * 100 + '%';
+      span.style.animationDuration = (3 + Math.random()*2) + 's';
+      container.appendChild(span);
+    }
+
+    // Ganti ucapan sesuai input pengguna
+    function ubahUcapan() {
+      const nama = prompt("Masukkan nama penerima:");
+      const pesan = prompt("Masukkan ucapanmu:");
+      const dari = prompt("Dari siapa?");
+      if (pesan) document.getElementById("message").textContent = pesan;
+      if (dari) document.getElementById("from").textContent = `- Dari: ${dari} -`;
+      if (nama) document.querySelector("h1").textContent = `🎂 Selamat Ulang Tahun ${nama}!`;
+    }
+  </script>
+
+
+</body></html>
